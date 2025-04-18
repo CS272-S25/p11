@@ -2,9 +2,14 @@ const container = document.getElementById('card-container');
 
 fetch('https://api.pokemontcg.io/v2/cards?q=nationalPokedexNumbers:[152 TO 251]')
   .then(res => res.json())
-  .then(data => {
-    const cards = data.data;
+  .then((data) => {
 
+    // order the pokedex indicies so they appear in acending order
+    const cards = data.data
+    .filter(card => Array.isArray(card.nationalPokedexNumbers) && card.nationalPokedexNumbers.length > 0)
+    .sort((a, b) => a.nationalPokedexNumbers[0] - b.nationalPokedexNumbers[0]);
+
+    // create a new node for each card
     cards.forEach(card => {
       const cardDiv = document.createElement('div');
       cardDiv.classList.add('card');
