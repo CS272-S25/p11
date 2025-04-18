@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Gen 1 Pokémon Cards</title>
+  <title>CS472 Pokedex</title>
   <link href="output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen p-6">
-  <h1 class="title">Gen 1 Pokémon Cards</h1>
 
-  <div id="card-container"
-       class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+</head>
+
+<!-- Navigation Bar -->
+<nav class="mb-10">
+  <ul class="flex justify-center gap-6 text-lg font-semibold text-blue-800">
+    <li><a href="index.html" class="hover:underline">Home</a></li>
+    <li><a href="kanto.html" class="hover:underline">Gen 1</a></li>
+    <li><a href="johto.html" class="hover:underline">Gen 2</a></li>
+    <li><a href="hoenn.html" class="hover:underline">Gen 3</a></li>
+  </ul>
+</nav>
+
+<body class="min-h-screen p-6">
+  <h1 class="text-4xl font-bold text-center mb-6">CS472 Pokedex</h1>
+
+  <div id="card-container" class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
   </div>
 
-  <script src="kanto.js"></script>
+  <script src="index.js"></script>
 </body>
+
 </html>
