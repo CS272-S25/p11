@@ -4,6 +4,7 @@
   "description": "Hello, CS472! This is where you can document your group project.",
   "main": "index.js",
   "scripts": {
+    "dev": "npx vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +19,9 @@
   },
   "homepage": "https://github.com/CS272-S25/p11#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.3"
+    "vite": "^6.3.2"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.11.3"
   }
 }

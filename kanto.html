@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CS472 Pokedex</title>
+        <link href="globals.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="min-h-screen flex flex-col items-center">
+        <nav class="mb-10 w-full border-b border-b-indigo-200 p-4 flex items-center justify-between">
+            <span class="text-2xl font-bold text-indigo-600 antialiase">CS472 Pokedex</span>
+            <ul class="flex justify-center gap-6 text-lg font-semibold text-blue-800">
+                <li><a href="/index.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Home</a></li>
+                <li><a href="/kanto.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 1</a></li>
+                <li><a href="/johto.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 2</a></li>
+                <li><a href="/hoenn.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 3</a></li>
+            </ul>
+        </nav>
+        <section class="w-11/12 md:w-3/4 lg:w-1/2">
+            <header class="flex flex-col md:flex-row items-center justify-between">
+                <div class="w-full">
+                    <h1 class="mb-6 text-5xl font-bold">
+                        Generation 1 Pokémon
+                    </h1>
+                    <p class="text-xl mb-6">
+                        Explore generation 1 pokemon in our collection below.
+                    </p>
+                </div>
+                <img 
+                    alt="A pokemon picture" 
+                    width="400" height="400" 
+                    src="./public/pikachu.webp"
+                />
+            </header>
+    
+            <div id="loading" class="hidden mt-16 animate-pulse text-xl mx-auto flex flex-col items-center gap-4">
+                <p>Loading pokemon...</p>
+                <img class="animate-spin" width="25" height="25" src="https://img.icons8.com/ios/50/loading.png" alt="loading"/>
+            </div>
+            <div id="card-container" class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            </div>
+        </section>
 
-<head>
-  <meta charset="UTF-8">
-  <title>CS472 Pokedex</title>
-  <link href="output.css" rel="stylesheet">
-</head>
-
-<body class="min-h-screen p-6">
-  <h1 class="text-4xl font-bold text-center mb-6">Gen 1 Pokémon Cards</h1>
-
-  <!-- Navigation Bar -->
-  <nav class="mb-10">
-    <ul class="flex justify-center gap-6 text-lg font-semibold text-blue-800">
-      <li><a href="index.html" class="hover:underline">Home</a></li>
-      <li><a href="kanto.html" class="hover:underline">Gen 1</a></li>
-      <li><a href="johto.html" class="hover:underline">Gen 2</a></li>
-      <li><a href="hoenn.html" class="hover:underline">Gen 3</a></li>
-    </ul>
-  </nav>
-
-  <div id="card-container" class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-  </div>
-
-  <script src="kanto.js"></script>
-</body>
-
+        <script src="kanto.js"></script>
+    </body>
 </html>
