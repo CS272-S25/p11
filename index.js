@@ -50,7 +50,7 @@ if (cachedData) {
     renderCards(cachedData);
 } else {
     fetch(
-      "https://api.pokemontcg.io/v2/cards?q=nationalPokedexNumbers:[1 TO 999]")
+      "https://api.pokemontcg.io/v2/cards?q=nationalPokedexNumbers:[1 TO 1010]")
       .then((res) => res.json())
       .then((data) => {
         // order the pokedex indicies so they appear in ascending order
