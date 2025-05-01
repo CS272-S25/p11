@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>CS472 Pokedex</title>
-        <link href="globals.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    </head>
-    <body class="min-h-screen flex flex-col items-center">
-        <nav class="mb-10 w-full border-b border-b-indigo-200 p-4 flex items-center justify-between">
-            <span class="text-2xl font-bold text-indigo-600 antialiase">CS472 Pokedex</span>
-            <ul class="flex justify-center gap-6 text-lg font-semibold text-blue-800">
-                <li><a href="/p11/index.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Home</a></li>
-                <li><a href="/p11/kanto.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 1</a></li>
-                <li><a href="/p11/johto.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 2</a></li>
-                <li><a href="/p11/hoenn.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 3</a></li>
-                <li><a href="/p11/sinnoh.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 4</a></li>
-                <li><a href="/p11/unova.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 5</a></li>
-                <li><a href="/p11/kalos.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 6</a></li>
-                <li><a href="/p11/alola.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 7</a></li>
-                <li><a href="/p11/galar.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 8</a></li>
-                <li><a href="/p11/paldea.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 9</a></li>
-            </ul>
-        </nav>
-        <section class="w-11/12 md:w-3/4 lg:w-1/2">
-            <header class="flex flex-col md:flex-row items-center justify-between">
-                <div class="w-full">
-                    <h1 class="mb-6 text-5xl font-bold">
-                        Generation 9 Pokémon
-                    </h1>
-                    <p class="text-xl mb-6">
-                        Explore pokemon in our collection below.
-                    </p>
-                </div>
-                <img 
-                    alt="A pokemon picture" 
-                    width="400" height="400" 
-                    src="./public/pikachu.webp"
-                />
-            </header>
-    
-            <div id="loading" class="hidden mt-16 animate-pulse text-xl mx-auto flex flex-col items-center gap-4">
-                <p>Loading pokemon...</p>
-                <img class="animate-spin" width="25" height="25" src="https://img.icons8.com/ios/50/loading.png" alt="loading"/>
-            </div>
-            <div id="card-container" class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-            </div>
-        </section>
 
-        <script src="paldea.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>CS472 Pokedex</title>
+    <link href="globals.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen flex flex-col items-center">
+    <nav class="mb-10 w-full border-b border-b-indigo-200 p-4 flex items-center justify-between">
+        <span class="text-2xl font-bold text-indigo-600 antialiase">CS472 Pokedex</span>
+        <ul class="flex justify-center gap-6 text-lg font-semibold text-blue-800">
+            <li><a href="/p11/index.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Home</a></li>
+            <li><a href="/p11/kanto.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 1</a></li>
+            <li><a href="/p11/johto.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 2</a></li>
+            <li><a href="/p11/hoenn.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 3</a></li>
+            <li><a href="/p11/sinnoh.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 4</a></li>
+            <li><a href="/p11/unova.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 5</a></li>
+            <li><a href="/p11/kalos.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 6</a></li>
+            <li><a href="/p11/alola.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 7</a></li>
+            <li><a href="/p11/galar.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 8</a></li>
+            <li><a href="/p11/paldea.html" class="hover:underline text-indigo-500 hover:text-indigo-600">Gen 9</a></li>
+        </ul>
+    </nav>
+    <section class="w-11/12 md:w-3/4 lg:w-1/2">
+        <header class="flex flex-col md:flex-row items-center justify-between">
+            <div class="w-full">
+                <h1 class="mb-6 text-5xl font-bold">
+                    Generation 9 Pokémon
+                </h1>
+                <p class="text-xl mb-6">
+                    Explore pokemon in our collection below.
+                </p>
+                <form id="search-form" class="mb-8 w-full">
+                    <div class="flex">
+                        <input id="search-input" type="text" aria-label="Search by Pokémon name"
+                            placeholder="Enter name of Pokémon"
+                            class="flex-1 rounded-xl border border-gray-300 text-lg shadow-sm" />
+                        <button type="submit"
+                            class="rounded-xl border-b-indigo-200 text-indigo-400 px-5 text-lg font-semibold hover:bg-indigo-600">
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <img alt="A pokemon picture" width="400" height="400" src="./public/pikachu.webp" />
+        </header>
+
+        <div id="loading" class="hidden mt-16 animate-pulse text-xl mx-auto flex flex-col items-center gap-4">
+            <p>Loading pokemon...</p>
+            <img class="animate-spin" width="25" height="25" src="https://img.icons8.com/ios/50/loading.png"
+                alt="loading" />
+        </div>
+        <div id="card-container"
+            class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        </div>
+    </section>
+
+    <script src="paldea.js"></script>
+</body>
+
 </html>
