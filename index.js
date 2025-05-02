@@ -1,5 +1,5 @@
 let loaded = false; // var to storen loading state, false if loading, true if loaded
-
+const RANGE = [1, 999]
 const showLoading = () => {
   document.getElementById("loading").classList.remove("hidden");
 };
@@ -70,7 +70,7 @@ const cachedData = getCachedData();
 
 showLoading();
 
-if (cachedData) {
+if (cachedData && cachedData.length > 0) {
   renderCards(cachedData);
   searchCards(cachedData);
   loaded = true;

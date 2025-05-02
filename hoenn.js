@@ -83,7 +83,7 @@ if (cachedData) {
   )
     .then((res) => res.json())
     .then((data) => {
-      // order the pokedex indicies so they appear in ascending order
+      // order the pokedex indices so they appear in ascending order
       const cards = data.data
         .filter(
           (card) =>
